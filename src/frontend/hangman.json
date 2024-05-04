@@ -1,0 +1,254 @@
+[
+
+    {
+        "id" : "1",
+        "word" : "guitar",
+        "hint" : "A musical instrument with strings."
+    },
+    {
+        "id" : "2",
+        "word" : "oxygen",
+        "hint" : "A colorless, odorless gas essential for life."
+    },
+    {
+        "id" : "3",
+        "word" : "mountain",
+        "hint" : "A large natural elevation of the Earth's surface."
+    },
+    {
+        "id" : "4",
+        "word" : "painting",
+        "hint" : "An art form using colors on a surface to create images or expression."
+    },
+    {
+        "id" : "5",
+        "word" : "astronomy",
+        "hint" : "The scientific study of celestial objects and phenomena."
+    },
+    {
+        "id" : "6",
+        "word" : "football",
+        "hint" : "A popular sport played with a spherical ball."
+    },
+    {
+        "id" : "7",
+        "word" : "chocolate",
+        "hint" : "A sweet treat made from cocoa beans."
+    },
+    {
+        "id" : "8",
+        "word" : "butterfly",
+        "hint" : "An insect with colorful wings and a slender body."
+    },
+    {
+        "id" : "9",
+        "word" : "history",
+        "hint" : "The study of past events and human civilization."
+    },
+    {
+        "id" : "10",
+        "word" : "pizza",
+        "hint" : "A savory dish consisting of a round, flattened base with toppings."
+    },
+    {
+        "id" : "11",
+        "word" : "jazz",
+        "hint" : "A genre of music characterized by improvisation and syncopation."
+    },
+    {
+        "id" : "12",
+        "word" : "camera",
+        "hint" : "A device used to capture and record images or videos."
+    },
+    {
+        "id" : "13",
+        "word" : "diamond",
+        "hint" : "A precious gemstone known for its brilliance and hardness."
+    },
+    {
+        "id" : "14",
+        "word" : "adventure",
+        "hint" : "An exciting or daring experience."
+    },
+    {
+        "id" : "15",
+        "word" : "science",
+        "hint" : "The systematic study of the structure and behavior of the physical and natural world."
+    },
+    {
+        "id" : "16",
+        "word" : "bicycle",
+        "hint" : "A human-powered vehicle with two wheels."
+    },
+    {
+        "id" : "17",
+        "word" : "sunset",
+        "hint" : "The daily disappearance of the sun below the horizon."
+    },
+    {
+        "id" : "18",
+        "word" : "coffee",
+        "hint" : "A popular caffeinated beverage made from roasted coffee beans."
+    },
+    {
+        "id" : "19",
+        "word" : "dance",
+        "hint" : "A rhythmic movement of the body often performed to music."
+    },
+    {
+        "id" : "20",
+        "word" : "galaxy",
+        "hint" : "A vast system of stars, gas, and dust held together by gravity."
+    },
+    {
+        "id" : "21",
+        "word" : "orchestra",
+        "hint" : "A large ensemble of musicians playing various instruments."
+    },
+    {
+        "id" : "22",
+        "word" : "volcano",
+        "hint" : "A mountain or hill with a vent through which lava, rock fragments, hot vapor, and gas are ejected."
+    },
+    {
+        "id" : "23",
+        "word" : "novel",
+        "hint" : "A long work of fiction, typically with a complex plot and characters."
+    },
+    {
+        "id" : "24",
+        "word" : "sculpture",
+        "hint" : "A three-dimensional art form created by shaping or combining materials."
+    },
+    {
+        "id" : "25",
+        "word" : "symphony",
+        "hint" : "A long musical composition for a full orchestra, typically in multiple movements."
+    },
+    {
+        "id" : "26",
+        "word" : "architecture",
+        "hint" : "The art and science of designing and constructing buildings."
+    },
+    {
+        "id" : "27",
+        "word" : "ballet",
+        "hint" : "A classical dance form characterized by precise and graceful movements."
+    },
+    {
+        "id" : "28",
+        "word" : "astronaut",
+        "hint" : "A person trained to travel and work in space."
+    },
+    {
+        "id" : "29",
+        "word" : "waterfall",
+        "hint" : "A cascade of water falling from a height."
+    },
+    {
+        "id" : "30",
+        "word" : "technology",
+        "hint" : "The application of scientific knowledge for practical purposes."
+    },
+    {
+        "id" : "31",
+        "word" : "rainbow",
+        "hint" : "A meteorological phenomenon that is caused by reflection, refraction, and dispersion of light."
+    },
+    {
+        "id" : "32",
+        "word" : "universe",
+        "hint" : "All existing matter, space, and time as a whole."
+    },
+    {
+        "id" : "33",
+        "word" : "piano",
+        "hint" : "A musical instrument played by pressing keys that cause hammers to strike strings."
+    },
+    {
+        "id" : "34",
+        "word" : "vacation",
+        "hint" : "A period of time devoted to pleasure, rest, or relaxation."
+    },
+    {
+        "id" : "35",
+        "word" : "rainforest",
+        "hint" : "A dense forest characterized by high rainfall and biodiversity."
+    },
+    {
+        "id" : "36",
+        "word" : "theater",
+        "hint" : "A building or outdoor area in which plays, movies, or other performances are staged."
+    },
+    {
+        "id" : "37",
+        "word" : "telephone",
+        "hint" : "A device used to transmit sound over long distances."
+    },
+    {
+        "id" : "38",
+        "word" : "language",
+        "hint" : "A system of communication consisting of words, gestures, and syntax."
+    },
+    {
+        "id" : "39",
+        "word" : "desert",
+        "hint" : "A barren or arid land with little or no precipitation."
+    },
+    {
+        "id" : "40",
+        "word" : "sunflower",
+        "hint" : "A tall plant with a large yellow flower head."
+    },
+    {
+        "id" : "41",
+        "word" : "fantasy",
+        "hint" : "A genre of imaginative fiction involving magic and supernatural elements."
+    },
+    {
+        "id" : "42",
+        "word" : "telescope",
+        "hint" : "An optical instrument used to view distant objects in space."
+    },
+    {
+        "id" : "43",
+        "word" : "breeze",
+        "hint" : "A gentle wind."
+    },
+    {
+        "id" : "44",
+        "word" : "oasis",
+        "hint" : "A fertile spot in a desert where water is found."
+    },
+    {
+        "id" : "45",
+        "word" : "photography",
+        "hint" : "The art, process, or practice of creating images by recording light or other electromagnetic radiation."
+    },
+    {
+        "id" : "46",
+        "word" : "safari",
+        "hint" : "An expedition or journey, typically to observe wildlife in their natural habitat."
+    },
+    {
+        "id" : "47",
+        "word" : "planet",
+        "hint" : "A celestial body that orbits a star and does not produce light of its own."
+    },
+    {
+        "id" : "48",
+        "word" : "river",
+        "hint" : "A large natural stream of water flowing in a channel to the sea, a lake, or another such stream."
+    },
+    {
+        "id" : "49",
+        "word" : "tropical",
+        "hint" : "Relating to or situated in the region between the Tropic of Cancer and the Tropic of Capricorn."
+    },
+    {
+        "id" : "50",
+        "word" : "mysterious",
+        "hint" : "Difficult or impossible to understand, explain, or identify."
+    }
+
+]
