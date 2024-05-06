@@ -31,6 +31,7 @@ function App() {
   const [wordState, setWordState] = useState("");
   const [wordList, setWordList] = useState([]);
   const [firstLoad, setFirstLoad] = useState(true);
+  const [canWin, setcanWin] = useState(true);
 
   const createList = () => {};
   const GoToAboutPage = () => {
@@ -50,6 +51,7 @@ function App() {
     }
     setWordState((dataF.wordState = temp));
     setFirstLoad(true);
+    setcanWin(true);
     console.log(dataF.word.word);
     console.log(dataF.viewer);
     console.log(dataF.hangman);
@@ -72,7 +74,9 @@ function App() {
     } else if (dataF.hangman === 6) {
       setHangmanImage((dataF.hangmanImage = hangman6));
     } else {
+      setcanWin(false);
       setHangmanImage((dataF.setHangmanImage = loss));
+      setWordState("Sorry, the word was " + word.word)
     }
   };
 
@@ -86,14 +90,6 @@ function App() {
     setViewer((dataF.viewer = 0));
     console.log(viewer);
   };
-
-  function StartingPage() {
-    return (
-      <div className="Start">
-        <button onClick={() => GoToHomePage()}>start</button>
-      </div>
-    );
-  }
 
   //The home page for a user to either go to to the game, see some user made words and for admins to be able to access their page
   function HomePage() {
@@ -175,8 +171,8 @@ function App() {
           </h2>
           <div className="Create-a-word">
             <p>
-              <input placeholder="WORD" />{" "}
-              <input style={{ width: 1000 }} placeholder="HINT" />
+              <input placeholder="  WORD" />{" "}
+              <input style={{ width: 1000 }} placeholder="  HINT" />
             </p>
           </div>
           <br />
@@ -221,7 +217,7 @@ function App() {
           <div style={{ color: "white" }}>
             <h2 className="Title">SE/COMS 319</h2>
             <p>5/3/2024, Professor Aldaco</p>
-            <p style={{ marginLeft: "5rem", marginRight: "5rem" }}>
+            <p style={{ marginLeft: "5.5rem", marginRight: "5.5rem" }}>
               <br />
               For our final project, we embarked on an ambitious endeavor to
               expand upon the foundations laid during our midterm project.
@@ -238,12 +234,12 @@ function App() {
               to manage the game's content effectively, including the ability to
               edit and delete user-submitted words and hints. We used a single
               page system with viewer parsing between them in a react program.
-              The database is based in Mongo, and we used node and express to
-              receive the information. For future improvements, we could add a user 
-              sign up and log in, And then have words be cited to a user. We also 
-              could make it so that the words could be reported and then sent to a 
-              connected repository, although then we would have to switch to MySQL.
-              And we could add a leaderboard of some sort for the number of words solved.
+              The database is bassed in Mongo and we used node and express to
+              receive the information. For future improvements, we could add user 
+              sign up and login, And then have words be cited to a user. We also 
+              could make it so that the words could be reported and then sent into a 
+              connected repository, although then we would probably have to switch to MySQL.
+              And we could add a leaderboard of some sort for number of words solved.
             </p>
             <br />
             <br />
@@ -254,10 +250,8 @@ function App() {
             <p>Made the game page, about page and part of the home page</p>
             <br />
             <h2 className="Title">Benjamin Johll (bdjohll@iastate.edu)</h2>
-            <p>Add something here</p>
-            {/* <div style = {{marginBottom: 1000}} />
-              
-            <p>uidfiu</p> */}
+            <p></p>
+            
           </div>
         </center>
       </div>
@@ -268,7 +262,7 @@ function App() {
   function GamePage() {
     function Guess(letter, button) {
       //button.disabled = true;
-      if (word.word.includes(letter)) {
+      if (word.word.includes(letter) && canWin == true) {
         console.log("Successful Guess");
         let wordStatus = wordState.split("");
         let i = 0;
@@ -280,7 +274,7 @@ function App() {
         });
 
         setWordState(wordStatus.join(""));
-        if (!wordStatus.includes("-") && count < 1) {
+        if (!wordStatus.includes("-") && count < 1 && canWin == true) {
           setHangmanImage(victory);
           setWordState(word.word + "\n\r CONGRATULATIONS you solved it");
           count += 10;
