@@ -149,6 +149,10 @@ function App() {
         </center>
 
         <center>
+          <div>
+            <h1 style={{color : "white"}}>Welcome to hangman Online!<br/> </h1>
+          </div>
+          <br/>
           <div
             className="List"
             style={{ border: 3, borderColor: "white", borderStyle: "solid" }}
