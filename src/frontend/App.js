@@ -235,8 +235,12 @@ function App() {
               to manage the game's content effectively, including the ability to
               edit and delete user-submitted words and hints. We used a single
               page system with viewer parsing between them in a react program.
-              The database is bassed in Mongo and we used node and express to
-              receive the information.
+              The database is based in Mongo, and we used node and express to
+              receive the information. For future improvements, we could add a user 
+              sign up and log in, And then have words be cited to a user. We also 
+              could make it so that the words could be reported and then sent to a 
+              connected repository, although then we would have to switch to MySQL.
+              And we could add a leaderboard of some sort for the number of words solved.
             </p>
             <br />
             <br />
