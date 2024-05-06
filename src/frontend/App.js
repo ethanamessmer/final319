@@ -18,6 +18,7 @@ function App() {
   let count = 0;
 
   let number_of_words = 50; //initialized upon loading the website
+  let next_id = 51;
   const [dataF, setDataF] = useState({});
   const [viewer, setViewer] = useState(0);
   const [hangman, setHangman] = useState(0);
@@ -96,19 +97,18 @@ function App() {
     const form = document.querySelector("#wordsubmit");
     const formData = new FormData(form);
     console.log(Object.fromEntries(formData));
+    fetch("http://localhost:8081/listWords")
+    .then((response) => response.json())
+    .then((myItems) => {
+      next_id = myItems[myItems.length-1].id;
+    });
     fetch("http://localhost:8081/addWord", {method: form.method, mode: "cors", body: JSON.stringify({
-      "id": number_of_words+1,
+      "id": next_id,
       "word": formData.get("word"),
       "hint": formData.get("hint")
     }),
     headers: {"Content-Type" : "application/json"
     }});
-
-    fetch("http://localhost:8081/listWords")
-        .then((response) => response.json())
-        .then((myItems) => {
-          number_of_words = myItems.length;
-        });
   }
 
   function StartingPage() {
@@ -417,7 +417,10 @@ function App() {
           wcWord.innerHTML = myItems[i].word;
           var wcHint = document.createElement("p");
           wcHint.innerHTML = myItems[i].hint;
+          var wcId = document.createElement("h4");
+          wcId.innerHTML = myItems[i].id;
 
+          wordcard.appendChild(wcId);
           wordcard.appendChild(wcWord);
           wordcard.appendChild(wcHint);
           modlist.appendChild(wordcard);

@@ -278,10 +278,6 @@ nav :hover::before {
   text-align: center;
 }
 
-.List h2 {
-  width: 40%;
-}
-
 .flexbox-container {
   display: flex;
   flex-direction: row;
