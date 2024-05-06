@@ -36,6 +36,7 @@ function App() {
   const GoToAboutPage = () => {
     setViewer((dataF.viewer = 1));
     console.log(dataF.viewer);
+    setFirstLoad(true);
   };
   const GoToGamePage = () => {
     setViewer((dataF.viewer = 2));
@@ -48,6 +49,7 @@ function App() {
       temp += "-";
     }
     setWordState((dataF.wordState = temp));
+    setFirstLoad(true);
     console.log(dataF.word.word);
     console.log(dataF.viewer);
     console.log(dataF.hangman);
@@ -77,6 +79,7 @@ function App() {
   const GoToAdminPage = () => {
     setViewer((dataF.viewer = 3));
     console.log(viewer);
+    setFirstLoad(true);
   };
   //any other Views?
   const GoToHomePage = () => {
