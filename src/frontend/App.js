@@ -100,7 +100,8 @@ function App() {
     fetch("http://localhost:8081/listWords")
     .then((response) => response.json())
     .then((myItems) => {
-      next_id = myItems[myItems.length-1].id;
+      next_id = myItems[myItems.length-1].id+1;
+      console.log(next_id);
     });
     fetch("http://localhost:8081/addWord", {method: form.method, mode: "cors", body: JSON.stringify({
       "id": next_id,
@@ -109,6 +110,10 @@ function App() {
     }),
     headers: {"Content-Type" : "application/json"
     }});
+    var conf = document.createElement("p");
+    conf.innerHTML = "Submitted " + formData.get("word");
+    document.querySelector("#submitpanel").appendChild(conf);
+
   }
 
   function StartingPage() {
@@ -189,7 +194,7 @@ function App() {
           </div>
 
           </div>
-          <div class="submit-word">
+          <div class="submit-word" id="submitpanel">
             <form id="wordsubmit" method="post" onSubmit={wordSubmit}>
               <h1 style={{color:"white"}}>Submit a Word</h1>
               <label>Word: <input type="text" name="word"></input></label>
