@@ -275,4 +275,5 @@ nav :hover::before {
   background-color: #371f76;
   border-radius: 25px;
   border: 2px solid #458D8D;
+  text-align: center;
 }
