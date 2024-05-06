@@ -400,6 +400,26 @@ function App() {
 
   //Where an admin can see a full list of the words, delete and update them.
   function AdminPage() {
+    AdminWords();
+
+    function AdminWords(){
+      fetch("http://localhost:8081/listWords")
+      .then((response) => response.json())
+      .then((myItems) => {
+        console.log(myItems);
+        number_of_words = myItems.length;
+        console.log(number_of_words);
+        let modlist = document.getElementById("modlist");
+        for(let i=0; i<number_of_words; i++){
+          var wordcard = document.createElement("div");
+          wordcard.class = "wordcard";
+          var wcWord = document.createElement("h2");
+          wcWord.innerHTML = myItems[i].word;
+          wordcard.appendChild(wcWord);
+          modlist.appendChild(wordcard);
+        }
+      });
+    }
     return (
       <div>
         <center>
@@ -429,6 +449,7 @@ function App() {
           </header>
         </center>
         <p>The Admin Page</p>
+        <div class="flexbox-container" id="modlist" style={{flexDirection: "column"}}></div>
       </div>
     );
   }
