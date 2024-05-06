@@ -1,5 +1,4 @@
-{
-"wordRepo" :[
+[
     {
         "id" : "1",
         "word" : "guitar",
@@ -251,4 +250,3 @@
         "hint" : "Difficult or impossible to understand, explain, or identify."
     }
 ]
-}

@@ -2,6 +2,7 @@ console.log("Made it in");
 
 var express = require("express");
 var cors = require("cors");
+var multer = require("multer");
 var app = express();
 //var fs = require("fs");
 var bodyParser = require("body-parser");
@@ -31,4 +32,28 @@ app.listen(port, () => {
     res.status(200);
     res.send(results);
   });
+
+  app.post("/addWord", async (req, res) => {
+    try{
+      await client.connect();
+      console.log("Node connected successfully to POST MongoDB");
+      console.log(req.body);
+      const values = Object.values(req.body);
+      const newDocument = {
+        "id": values[0],
+        "word": values[1],
+        "hint": values[2]
+      };
+      console.log(newDocument);
+      const results = await db
+        .collection("words")
+        .insertOne(newDocument);
+      res.status(200);
+      res.send(results);
+    } catch(error){
+      console.error("Error on POST request:", error);
+      res.status(500).send({error: "Internal server error."});
+    }
+  });
+
 });

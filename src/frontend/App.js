@@ -91,6 +91,29 @@ function App() {
     console.log(viewer);
   };
 
+  function wordSubmit(e){
+    e.preventDefault();
+    const form = document.querySelector("#wordsubmit");
+    const formData = new FormData(form);
+    console.log(Object.fromEntries(formData));
+    fetch("http://localhost:8081/addWord", {method: form.method, mode: "cors", body: JSON.stringify({
+      "id": number_of_words+1,
+      "word": formData.get("word"),
+      "hint": formData.get("hint")
+    })
+    , headers: {"Content-Type" : "application/json"}
+  })
+
+  }
+
+  function StartingPage() {
+    return (
+      <div className="Start">
+        <button onClick={() => GoToHomePage()}>start</button>
+      </div>
+    )
+  }
+
   //The home page for a user to either go to to the game, see some user made words and for admins to be able to access their page
   function HomePage() {
     if (firstLoad) {
@@ -146,41 +169,31 @@ function App() {
             </div>
           </header>
         </center>
+        <div>
+          <h1>The Home Page</h1>
 
-        <center>
+        </div>
+        <div class="flexbox-container">
+
           <div>
-            <h1 style={{color : "white"}}>Welcome to hangman Online!<br/> </h1>
-          </div>
-          <br/>
-          <div
-            className="List"
-            style={{ border: 3, borderColor: "white", borderStyle: "solid" }}
-          >
-            {" "}
-            {/*The left side list of hints */}
-            <h2 className="List" style={{ color: "white" }}>
-              Some hints of user created words: <br />
-              <pre>{wordList}</pre>
-            </h2>
+            <div className = "List" style = {{ border : 5, borderColor: "white", borderStyle : "solid"}}> {/*The left side list of hints */}
+            <h2 style={{color:"white"}}><pre>{wordList}</pre></h2>
+            <button onClick={() => GetAll() }>Load Words</button>
           </div>
 
-          <h2 className="title" style={{ color: "white" }}>
-            Want to add your own?
-            <br />
-            <br />
-          </h2>
-          <div className="Create-a-word">
-            <p>
-              <input placeholder="  WORD" />{" "}
-              <input style={{ width: 1000 }} placeholder="  HINT" />
-            </p>
           </div>
-          <br />
-          <br />
-          <div className="keyboard">
-            <button>Submit</button>
+          <div class="submit-word">
+            <form id="wordsubmit" method="post" onSubmit={wordSubmit}>
+              <h1 style={{color:"white"}}>Submit a Word</h1>
+              <label>Word: <input type="text" name="word"></input></label>
+              <br></br>
+              <label>Hint: <input type="text" name="hint"></input></label>
+              <br></br>
+              <button>Submit!</button>
+            </form>
           </div>
-        </center>
+          
+        </div>
       </div>
     );
   }
