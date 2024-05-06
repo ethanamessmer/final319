@@ -252,7 +252,7 @@ nav :hover::before {
 
 
 .List {
-  max-width: fit-content;
+  width: 100%;
   align-self: center;
   
 }
@@ -278,9 +278,7 @@ nav :hover::before {
   text-align: center;
 }
 
-.List h2 {
-  width: 40%;
-}
+
 
 .flexbox-container {
   display: flex;

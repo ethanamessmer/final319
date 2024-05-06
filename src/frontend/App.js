@@ -100,10 +100,15 @@ function App() {
       "id": number_of_words+1,
       "word": formData.get("word"),
       "hint": formData.get("hint")
-    })
-    , headers: {"Content-Type" : "application/json"}
-  })
+    }),
+    headers: {"Content-Type" : "application/json"
+    }});
 
+    fetch("http://localhost:8081/listWords")
+        .then((response) => response.json())
+        .then((myItems) => {
+          number_of_words = myItems.length;
+        });
   }
 
   function StartingPage() {
@@ -128,6 +133,8 @@ function App() {
         .then((response) => response.json())
         .then((myItems) => {
           console.log(myItems);
+          number_of_words = myItems.length;
+          console.log(number_of_words);
           setWords(myItems);
           listWords(myItems);
         });
