@@ -412,10 +412,14 @@ function App() {
         let modlist = document.getElementById("modlist");
         for(let i=0; i<number_of_words; i++){
           var wordcard = document.createElement("div");
-          wordcard.class = "wordcard";
+          wordcard.setAttribute("class", "wordcard")
           var wcWord = document.createElement("h2");
           wcWord.innerHTML = myItems[i].word;
+          var wcHint = document.createElement("p");
+          wcHint.innerHTML = myItems[i].hint;
+
           wordcard.appendChild(wcWord);
+          wordcard.appendChild(wcHint);
           modlist.appendChild(wordcard);
         }
       });

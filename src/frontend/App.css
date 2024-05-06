@@ -296,3 +296,11 @@ nav :hover::before {
 label {
   color:white;
 }
+
+.wordcard {
+  color: white;
+  background-color:#795695;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+}
