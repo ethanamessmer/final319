@@ -270,3 +270,9 @@ nav :hover::before {
 .Create-a-word {
   display: inline-flex;
 }
+.Create-a-word input {
+  color: #fcfcfc;
+  background-color: #371f76;
+  border-radius: 25px;
+  border: 2px solid #458D8D;
+}
