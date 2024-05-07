@@ -56,4 +56,28 @@ app.listen(port, () => {
     }
   });
 
+  app.put("/updateWord/:id", async (req, res) => {
+    try{
+      const id = Number(req.params.id);
+      await client.connect();
+      console.log("Node connected successfully to PUT MongoDB at ID " + id);
+      console.log(req.body);
+    } catch(error){
+      console.error("Error on PUT request:", error);
+      res.status(500).send({error: "Internal server error."});
+    }
+  });
+
+  app.put("/deleteWord/:id", async (req, res) => {
+    try{
+      const id = Number(req.params.id);
+      await client.connect();
+      console.log("Node connected successfully to PUT MongoDB at ID " + id);
+      console.log(req.body);
+    } catch(error){
+      console.error("Error on PUT request:", error);
+      res.status(500).send({error: "Internal server error."});
+    }
+  });
+
 });

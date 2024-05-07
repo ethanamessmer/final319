@@ -92,6 +92,8 @@ function App() {
     console.log(viewer);
   };
 
+
+
   function wordSubmit(e){
     e.preventDefault();
     const form = document.querySelector("#wordsubmit");
@@ -114,6 +116,26 @@ function App() {
     conf.innerHTML = "Submitted " + formData.get("word");
     document.querySelector("#submitpanel").appendChild(conf);
 
+  }
+
+  function wordUpdate(form, id, e){
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    //const form = document.querySelector("#wcForm"+id);
+    const formData = new FormData(form);
+    console.log(Object.fromEntries(formData));
+    fetch("http://localhost:8081/updateWord/"+id, {method: "put", mode: "cors", body: JSON.stringify({
+      "word": formData.get("word"),
+      "hint": formData.get("hint")
+    }),
+    headers: {"Content-Type" : "application/json"
+    }});
+  }
+
+  function wordDelete(form, id){
+    const formData = new FormData(form);
+    console.log(Object.fromEntries(formData));
+    fetch("http://localhost:8081/deleteWord/"+id, {method: "delete"});
   }
 
   function StartingPage() {
@@ -418,20 +440,53 @@ function App() {
         for(let i=0; i<number_of_words; i++){
           var wordcard = document.createElement("div");
           wordcard.setAttribute("class", "wordcard")
+          var id = myItems[i].id;
+
           var wcWord = document.createElement("h2");
           wcWord.innerHTML = myItems[i].word;
+
           var wcHint = document.createElement("p");
           wcHint.innerHTML = myItems[i].hint;
-          var wcId = document.createElement("h4");
-          wcId.innerHTML = myItems[i].id;
 
-          wordcard.appendChild(wcId);
+          var wcEdit = document.createElement("button");
+          wcEdit.innerHTML = "Submit Changes";
+          wcEdit.setAttribute("type", "submit");
+
+          var wcDel = document.createElement("button");
+          wcDel.innerHTML = "Delete";
+          wcDel.setAttribute("type", "button");
+          wcDel.onclick = (wcForm, id) => wordDelete;
+
+          var wcForm = document.createElement("form");
+          wcForm.setAttribute("id", "wcForm"+myItems[i].id);
+          wcForm.setAttribute("class", "wcForm");
+          wcForm.setAttribute("method", "put");
+          
+          wcForm.onsubmit = (wcForm, id) => wordUpdate;
+
+          var wcFormWord = document.createElement("input");
+          wcFormWord.setAttribute("value", myItems[i].word);
+          wcFormWord.setAttribute("name", "word");
+
+          var wcFormHint = document.createElement("input");
+          wcFormHint.setAttribute("value", myItems[i].hint);
+          wcFormHint.setAttribute("name", "hint")
+          wcFormHint.style.width = "40%";
+
+
+          wcForm.appendChild(wcFormWord);
+          wcForm.appendChild(wcFormHint);
+          wcForm.appendChild(wcEdit);
+          wcForm.appendChild(wcDel);
           wordcard.appendChild(wcWord);
           wordcard.appendChild(wcHint);
+          wordcard.appendChild(wcForm);
           modlist.appendChild(wordcard);
         }
       });
     }
+
+
     return (
       <div>
         <center>
