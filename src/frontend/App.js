@@ -295,6 +295,7 @@ function App() {
             <p>Made the game page, about page and part of the home page</p>
             <br />
             <h2 className="Title">Benjamin Johll (bdjohll@iastate.edu)</h2>
+            <p>Made the admin page, most of the backend, and the other part of the home page.</p>
             <p></p>
             
           </div>
