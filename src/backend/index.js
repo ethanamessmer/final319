@@ -28,7 +28,7 @@ app.listen(port, () => {
       .find(query)
       .limit(100)
       .toArray();
-    console.log(results);
+    //console.log(results);
     res.status(200);
     res.send(results);
   });
@@ -59,23 +59,31 @@ app.listen(port, () => {
   app.put("/updateWord/:id", async (req, res) => {
     try{
       const id = Number(req.params.id);
+      const values = Object.values(req.body);
       await client.connect();
       console.log("Node connected successfully to PUT MongoDB at ID " + id);
       console.log(req.body);
+      await db
+        .collection("words")
+        .updateOne({id: id}, {$set: {word: values[0], hint: values[1]}})
     } catch(error){
       console.error("Error on PUT request:", error);
       res.status(500).send({error: "Internal server error."});
     }
   });
 
-  app.put("/deleteWord/:id", async (req, res) => {
+  app.delete("/deleteWord/:id", async (req, res) => {
     try{
       const id = Number(req.params.id);
       await client.connect();
-      console.log("Node connected successfully to PUT MongoDB at ID " + id);
+      console.log("Node connected successfully to DELETE MongoDB at ID " + id);
       console.log(req.body);
+      await db
+        .collection("words")
+        .deleteOne({id: id});
+      console.log("Deleted");
     } catch(error){
-      console.error("Error on PUT request:", error);
+      console.error("Error on DELETE request:", error);
       res.status(500).send({error: "Internal server error."});
     }
   });
