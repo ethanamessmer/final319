@@ -1,0 +1,306 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+.full-site{
+    background: #458D8D;
+    justify-content: center;
+    min-height: 100vh;
+}
+.description{
+    background: #458D8D;
+    margin-right: 110px;
+    margin-left: 110px;
+}
+.wrapper{
+    width: 130vmin;
+    height:70vmin;
+    border-radius: 5px;
+    display : flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #000;
+}
+footer {
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+body {
+	margin: 0;
+	background: #313131;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+}
+.Start {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #371f76;
+    height: 1500;
+    margin: 0;
+}
+.keyboard button{
+    padding : 7px;
+    background-color: #371f76;
+    width: calc(100% / 9 - 5px);
+    margin: 0;
+}
+:where(.game-model, .keyboard) button {
+    color:#fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+    
+}
+.keyboard button[disabled]{
+    pointer-events: none;
+    opacity: 0.4;
+}
+:where(.game-model,.keyboard) button:hover{
+    background-color: #377373;
+    transition: 0.5s;
+}
+.game-model {
+    position:fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 0 10px;
+    transition: opacity 0.4s ease;
+}
+.game-model.show {
+    opacity:1;
+    pointer-events: auto;
+    transition: opacity 0.4s 0.4s ease;
+}
+.game-model h4 {
+    font-size: 1.5rem;
+}
+.game-model p {
+    font-size: 1.15rem;
+    margin: 15px 0 30px;
+    font-weight: 500;
+}
+.game-model p strong {
+    font-weight: 600;
+}
+.game-model button {
+    padding: 12px 23px;
+}
+.word {
+  font-size: 60pt;
+  color: #fffffe;
+  letter-spacing: 8px;
+  font-family: 'wide-serrif';
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+.game {
+    display:flex;
+    width: 850px;
+    gap:70px;
+    padding: 60px 40px;
+    border-radius: 10px;
+    align-items:flex-end;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px rgba(104, 90, 90, 0.1);
+}
+
+.hangman-box img{
+    max-width: 270px;
+user-select: none;
+}
+
+.game-box h4 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.game-box h4 strong {
+    font-weight: 600;
+}
+
+header {
+  background:#371f76;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  justify-content: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 35px;
+  margin-right: 35px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  
+  position: relative;
+}
+
+nav button {
+  color: #fffffe;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: #795695;
+  height: 30px;
+  Width : 200px;
+}
+
+nav button:hover {
+  color: #000;
+  background-color: #377373;
+  transition-duration: 500ms;
+}
+
+nav button::before {
+  justify-content: center;
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav :hover::before {
+  width: 100%;
+}
+
+
+.List {
+  max-width: fit-content;
+  align-self: center;
+  
+}
+.List h2 pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+  text-align: center;
+}
+
+.full-Page {
+  display: center;
+  justify-content: center;
+}
+
+.Create-a-word {
+  display: inline-flex;
+}
+.Create-a-word input {
+  color: #fcfcfc;
+  background-color: #371f76;
+  border-radius: 25px;
+  border: 2px solid #458D8D;
+  text-align: center;
+}
+
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.submit-word {
+  padding: 20px;
+  background-color: #371f76;
+}
+
+label {
+  color:white;
+}
+
+.wordcard {
+  color: white;
+  background-color:#795695;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#inline {
+  display: inline-flex;
+}
