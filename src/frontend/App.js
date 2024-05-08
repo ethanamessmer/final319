@@ -364,6 +364,7 @@ function App() {
         }),
         headers: { "Content-Type": "application/json" },
       });
+      GoToGamePage();
     }
     function Guess(letter, button) {
       //button.disabled = true;
